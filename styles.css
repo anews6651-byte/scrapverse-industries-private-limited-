@@ -258,7 +258,8 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: var(--z-preloader);
+    flex-direction: column;
+    z-index: 99999;
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -269,6 +270,10 @@ textarea {
 
 .loader {
     text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .loader-inner {
@@ -321,6 +326,7 @@ textarea {
     font-weight: 700;
     color: var(--color-white);
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 @keyframes loaderRotate {
@@ -338,6 +344,11 @@ textarea {
     text-align: center;
     position: relative;
     z-index: calc(var(--z-sticky) + 1);
+    overflow: hidden;
+}
+
+.top-bar .container {
+    overflow: hidden;
 }
 
 .top-bar p {
@@ -347,6 +358,13 @@ textarea {
     color: var(--color-white);
     margin: 0;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 .top-bar i {
@@ -2329,6 +2347,15 @@ textarea {
         --section-padding: 60px 0;
     }
     
+    .top-bar p {
+        font-size: 0.7rem;
+        animation-duration: 12s;
+    }
+    
+    .top-bar {
+        padding: 8px 0;
+    }
+    
     .hero {
         padding: 100px 0 60px;
     }
@@ -2567,6 +2594,7 @@ textarea {
     .top-bar p {
         font-size: 0.65rem;
         letter-spacing: 0;
+        animation-duration: 10s;
     }
     
     .container {
