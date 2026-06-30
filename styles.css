@@ -330,11 +330,41 @@ textarea {
 }
 
 /* ===================================
+   Top Announcement Bar
+   =================================== */
+.top-bar {
+    background: var(--gradient-primary);
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    z-index: calc(var(--z-sticky) + 1);
+}
+
+.top-bar p {
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.top-bar i {
+    margin-right: 8px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===================================
    Navigation
    =================================== */
 .navbar {
     position: fixed;
-    top: 0;
+    top: 40px;
     left: 0;
     width: 100%;
     padding: 20px 0;
@@ -347,6 +377,7 @@ textarea {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 12px 0;
+    top: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -549,7 +580,7 @@ textarea {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 0 80px;
+    padding: 140px 0 80px;
     overflow: hidden;
 }
 
@@ -2531,6 +2562,11 @@ textarea {
 @media (max-width: 480px) {
     :root {
         --section-padding: 48px 0;
+    }
+    
+    .top-bar p {
+        font-size: 0.65rem;
+        letter-spacing: 0;
     }
     
     .container {
