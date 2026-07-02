@@ -2979,6 +2979,14 @@ textarea {
         bottom: 20px;
         right: 20px;
     }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3505,6 +3513,46 @@ textarea {
 }
 
 /* ===================================
+   Floating WhatsApp Button
+   =================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: var(--transition-base);
+    animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    color: var(--color-white);
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ===================================
    Print Styles
    =================================== */
 @media print {
@@ -3512,7 +3560,8 @@ textarea {
     .back-to-top,
     .scroll-indicator,
     .hero-bg,
-    #preloader {
+    #preloader,
+    .whatsapp-float {
         display: none !important;
     }
     
